@@ -1,0 +1,33 @@
+html {
+    height: auto;
+    min-height: 100%;
+    font-smooth: always;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.body {
+    position: relative;
+    width: 100%;
+    min-width: 320px;
+    min-height: 100%;
+    color: $default_text_color;
+    background-color: $primary_light;
+    perspective: 950px;
+
+    & > * {
+        font-family: $default_font_family;
+    }
+}
+
+.d-flex {
+    display: flex;
+}
+
+.f-column {
+    flex-direction: column;
+}
+
+.align-center {
+    align-items: center;
+}
