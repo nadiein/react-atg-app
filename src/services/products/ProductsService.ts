@@ -1,4 +1,3 @@
-import DataVO from "../../models/common/CommonModels";
 import { ProductDetailsModel, ProductModel, ProductTrackModel } from '../../models/product/ProductModel';
 import RequestOptions from "../../models/request/RequestModel";
 import { http, handleError } from '../base/BaseService';
@@ -15,6 +14,7 @@ class ProductsService {
 
                 for (const product of products['results']) {
                     const details = new ProductDetailsModel();
+                    details.id = product['id'];
                     details.startTime = product['startTime'];
                     details.totalToWin = product['totalToWin'];
                     details.tracks = [];
