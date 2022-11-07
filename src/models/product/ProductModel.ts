@@ -14,8 +14,6 @@ class ProductModel {
 
 class ProductDetailsModel {
     public id:string;
-    public startTime:string;
-    public totalToWin:string;
     public tracks:ProductTrackModel[];
     public games:GameModel;
 }
