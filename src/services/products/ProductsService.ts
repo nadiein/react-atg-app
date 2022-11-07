@@ -15,8 +15,6 @@ class ProductsService {
                 for (const product of products['results']) {
                     const details = new ProductDetailsModel();
                     details.id = product['id'];
-                    details.startTime = product['startTime'];
-                    details.totalToWin = product['totalToWin'];
                     details.tracks = [];
 
                     for (const track of product['tracks']) {
