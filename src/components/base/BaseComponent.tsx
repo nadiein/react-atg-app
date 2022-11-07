@@ -1,9 +1,9 @@
 import React, { Fragment, FunctionComponent, ReactElement, useEffect, useState } from 'react';
-import { ProductType } from '../../models/product/ProductModel';
+import { ProductModel, ProductType } from '../../models/product/ProductModel';
 import ProductsService from '../../services/products/ProductsService';
 import { REQUEST_OPTIONS, SearchUrlBuilder } from '../../utils/http/HttpHelpers';
 import OptionsFormControl from '../form-controls/OptionsFormControl';
-import Table from '../table/Table';
+import GameTable from '../game-table/GameTable';
 
 
 const productOptions = [
@@ -25,14 +25,14 @@ const BaseComponent:FunctionComponent = ():ReactElement => {
     }
 
     useEffect(() => {
-        ProductsService.getProducts(REQUEST_OPTIONS).then((res:any[]) => setProducts(res));
+        ProductsService.getProducts(REQUEST_OPTIONS).then(( res:any ) => setProducts(res));
     }, [productType]);
-    console.warn(products)
+
     return (
         <Fragment>
             <h1>Base Component</h1>
             <OptionsFormControl options={ productOptions } getSelectOnChange={ handleOnChange } />
-            <Table />
+            <GameTable products={ products } />
         </Fragment>
     );
 }
