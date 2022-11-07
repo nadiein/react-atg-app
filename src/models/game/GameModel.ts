@@ -1,26 +1,25 @@
+import DriverDetailsModel from '../driver/DriverModel';
 import { HorseDetailsModel } from '../horse/HorseModel';
+import TrackModel from '../track/TrackModel';
 
 
 class GameModel {
     public id:string;
-    public gameRaces:GameRacesModel[];
+    public gameRaces:GameRacesModel[] = [];
 }
 
 class GameRacesModel {
-    public id:string;
-    public name:string;
-    public date:string;
     public number:number;
-    public distance:number;
+    public name:string;
     public startTime:string;
-    public scheduledStartTime:string;
-    public starts:GameStartsModel[];
+    public track:TrackModel;
+    public starts:GameStartsModel[] = [];
 }
 
 class GameStartsModel {
-    public id:number;
-    public name:string;
+    public number:number;
     public horse:HorseDetailsModel;
+    public driver:DriverDetailsModel;
 }
 
 export {

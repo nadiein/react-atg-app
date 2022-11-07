@@ -8,15 +8,15 @@ class HorseDetailsModel {
 }
 
 class HorsePedigreeDetailsModel {
-    public mare:HorseMareDetails;
+    public father:HorseFatherDetails;
 }
 
-class HorseMareDetails {
+class HorseFatherDetails {
     public name:string;
 }
 
 export {
     HorseDetailsModel,
     HorsePedigreeDetailsModel,
-    HorseMareDetails
+    HorseFatherDetails
 };
