@@ -4,16 +4,16 @@ import GameTableDetails from './GameTableDetails';
 
 
 type GamesTableTypes = {
-    products:any
+    productModel:ProductModel
 }
 
-const GameTable:FunctionComponent<GamesTableTypes> = ({ products }:GamesTableTypes):ReactElement => {
+const GameTable:FunctionComponent<GamesTableTypes> = ({ productModel }:GamesTableTypes):ReactElement => {
 
     return (
         <Fragment>
             <div className='games-table-wrapper'>
                 {
-                    products['productDetails'] ? products['productDetails'].map((product:ProductDetailsModel, index:number) => (
+                    productModel['productDetails'] ? productModel['productDetails'].map((product:ProductDetailsModel, index:number) => (
                         <GameTableDetails product={ product } key={ index } />
                     )) : 'Have no Game Details'
                 }
