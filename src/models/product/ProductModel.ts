@@ -1,3 +1,6 @@
+import { GameModel } from '../game/GameModel';
+
+
 enum ProductType {
     V75 = 'V75',
     V86 = 'V86',
@@ -10,9 +13,11 @@ class ProductModel {
 }
 
 class ProductDetailsModel {
+    public id:string;
     public startTime:string;
     public totalToWin:string;
     public tracks:ProductTrackModel[];
+    public games:GameModel;
 }
 
 class ProductTrackModel {
