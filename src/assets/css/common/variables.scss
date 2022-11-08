@@ -7,3 +7,49 @@ $inter: 'Inter', sans-serif;
 $default_font_family: $inter;
 
 $default_text_color: $grey_dark;
+
+$brand-gap: 1em;
+$gaps_dict: (5, 10, 15, 20, 25, 30, 50);
+
+@each $gap in $gaps_dict {
+
+    .p-#{$gap} {
+        padding: $gap + px;
+    }
+
+    .p-l-#{$gap} {
+        padding-left: $gap + px;
+    }
+
+    .p-r-#{$gap} {
+        padding-right: $gap + px;
+    }
+
+    .p-t-#{$gap} {
+        padding-top: $gap + px;
+    }
+
+    .p-b-#{$gap} {
+        padding-bottom: $gap + px;
+    }
+
+    .m-#{$gap} {
+        margin: $gap + px;
+    }
+
+    .m-l-#{$gap} {
+        margin-left: $gap + px;
+    }
+
+    .m-r-#{$gap} {
+        margin-right: $gap + px;
+    }
+
+    .m-t-#{$gap} {
+        margin-top: $gap + px;
+    }
+
+    .m-b-#{$gap} {
+        margin-bottom: $gap + px;
+    }
+}
