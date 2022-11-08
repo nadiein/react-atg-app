@@ -16,7 +16,9 @@ const productOptions = [
 
 const BaseComponent:FunctionComponent = ():ReactElement => {
     const [products, setProducts] = useState(new ProductModel());
+    const [games, setGames] = useState(new GameModel());
     const [productType, setProductType] = useState(ProductType.V75);
+    const [isLoadingFinished, setLoadingFinished] = useState(false);
 
     REQUEST_OPTIONS.method = 'GET';
 
@@ -26,10 +28,15 @@ const BaseComponent:FunctionComponent = ():ReactElement => {
 
     const productRequest:string = SearchUrlBuilder.forProduct(productType).build();
 
+    // TODO: make cache like for products model
     useEffect(() => {
         REQUEST_OPTIONS.url = productRequest;
 
-        ProductsService.getProducts(REQUEST_OPTIONS).then(( res:any ) => setProducts(res));
+        ProductsService.getProducts(REQUEST_OPTIONS).then(( res:any ) => {
+            setLoadingFinished(true);
+            setProducts(res)
+        });
+
     }, [productType]);
 
     useEffect(() => {
@@ -39,15 +46,23 @@ const BaseComponent:FunctionComponent = ():ReactElement => {
 
             REQUEST_OPTIONS.url = gameRequest;
 
-            GamesService.getGames(REQUEST_OPTIONS).then(( res:any ) => details['games'] = res);
+            GamesService.getGames(REQUEST_OPTIONS).then(( res:any ) => {
+                setGames(res)
+                setLoadingFinished(true);
+            });
         }
-    }, [products]);
+    }, [products])
 
     return (
         <Fragment>
-            <h1>Base Component</h1>
-            <OptionsFormControl options={ productOptions } getSelectOnChange={ handleOnChange } />
-            <GameTable productModel={ products } />
+            <div className='m-15'>
+                <div className='m-b-15'>
+                    <OptionsFormControl options={ productOptions } getSelectOnChange={ handleOnChange } />
+                </div>
+                {
+                    isLoadingFinished ? <GameTable productModel={ products } gamesModel={ games } /> : '...'
+                }
+            </div>
         </Fragment>
     );
 }
