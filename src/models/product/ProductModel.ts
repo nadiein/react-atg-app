@@ -9,13 +9,14 @@ enum ProductType {
 
 class ProductModel {
     public type:ProductType;
-    public productDetails:ProductDetailsModel[];
+    public productDetails:ProductDetailsModel[] = [];
 }
 
 class ProductDetailsModel {
     public id:string;
-    public tracks:ProductTrackModel[];
-    public games:GameModel;
+    public startTime:string;
+    public track:ProductTrackModel = new ProductTrackModel();
+    public games:GameModel = new GameModel();
 }
 
 class ProductTrackModel {
