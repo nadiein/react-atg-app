@@ -14,7 +14,7 @@ const OptionsFormControl:FunctionComponent<SelectFormControlTypes> = (props):Rea
                 {
                     props.options ? props.options.map((option:any) => (
                         <option value={option['name']} key={option['id']}>{option['name']}</option>
-                    )) : <option value="">...</option>
+                    )) : <option value=''>...</option>
                 }
             </select>
         </Fragment>
