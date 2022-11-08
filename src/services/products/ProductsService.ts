@@ -10,22 +10,22 @@ class ProductsService {
             .then(res => res.json())
             .then(products => {
                 const productModel = new ProductModel();
-                productModel.productDetails = [];
+                productModel['productDetails'] = [];
 
                 for (const product of products['results']) {
                     const details = new ProductDetailsModel();
-                    details.id = product['id'];
-                    details.tracks = [];
+                    details['id'] = product['id'];
+                    details['startTime'] = product['startTime'];
 
                     for (const track of product['tracks']) {
                         const detailsTrack = new ProductTrackModel();
-                        detailsTrack.id = track['id'];
-                        detailsTrack.name = track['name'];
-                        details.tracks.push(detailsTrack);
+                        detailsTrack['id'] = track['id'];
+                        detailsTrack['name'] = track['name'];
+                        details['track'] = detailsTrack;
                     }
-                    productModel.productDetails.push(details);
+                    productModel['productDetails'].push(details);
                 }
-                productModel.type = products['betType'];
+                productModel['type'] = products['betType'];
 
                 return productModel;
             })
