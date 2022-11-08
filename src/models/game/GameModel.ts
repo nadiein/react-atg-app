@@ -12,14 +12,14 @@ class GameRacesModel {
     public number:number;
     public name:string;
     public startTime:string;
-    public track:TrackModel;
+    public track:TrackModel = new TrackModel();
     public starts:GameStartsModel[] = [];
 }
 
 class GameStartsModel {
     public number:number;
-    public horse:HorseDetailsModel;
-    public driver:DriverDetailsModel;
+    public horse:HorseDetailsModel = new HorseDetailsModel();
+    public driver:DriverDetailsModel = new DriverDetailsModel();
 }
 
 export {
