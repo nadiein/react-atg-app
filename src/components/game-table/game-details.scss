@@ -1,0 +1,32 @@
+.race-details--header {
+    padding: var(--brand-gap);
+    border-top: 1px solid var(--grey-light);
+    border-bottom: 1px solid var(--grey-light);
+
+    &:not(:first-child) {
+        margin-top: calc(var(--brand-gap) * 4);
+    }
+
+    & > * {
+
+        &:not(:last-child) {
+            padding-right: var(--brand-gap);
+        }
+    }
+}
+
+.race-details--title {
+    display: flex;
+
+    & > * {
+        padding-right: calc(var(--brand-gap) / 2);
+    }
+}
+
+.race-name {
+    display: block;
+    max-width: calc(100% / 3);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

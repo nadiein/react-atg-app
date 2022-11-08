@@ -1,0 +1,18 @@
+.games-table-wrapper {
+    border: 1px solid var(--grey-light);
+}
+
+.table-row {
+
+    &:not(:first-child) {
+
+        .table-header {
+            margin-top: calc(var(--brand-gap) * 3);
+            border-top: 1px solid var(--grey-light);
+        }
+    }
+}
+
+.table-header {
+    padding: var(--brand-gap);
+}
