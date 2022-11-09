@@ -1,5 +1,5 @@
 .horse-details {
-    margin-left: calc(var(--brand-gap) * 2);
+    margin: 0 calc(var(--brand-gap) * 2);
     padding: var(--brand-gap) calc(var(--brand-gap) * 2);
     border: 1px solid var(--grey-light);
     border-top: 0;
