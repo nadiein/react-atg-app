@@ -19,7 +19,7 @@ jobs:
       - name: Install Node.js dependencies
         run: npm i
       - name: Run tests
-        run: npm run test
+        uses: stefanoeb/jest-action@1.0.3
 
       - name: Run linters
         uses: wearerequired/lint-action@v2
