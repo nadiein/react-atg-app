@@ -1,5 +1,5 @@
 const handleError = (error:string) => {
-    return error;
+    throw error;
 }
 
 const http = (endpoint:string, method:string, headers:any, body:any=null) => fetch(endpoint, {

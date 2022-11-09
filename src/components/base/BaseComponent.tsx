@@ -12,7 +12,7 @@ const productOptions = [
     { id: 0, name: ProductType.V75 },
     { id: 1, name: ProductType.GS75 },
     { id: 2, name: ProductType.V86 }
-]
+];
 
 const BaseComponent:FunctionComponent = ():ReactElement => {
     const [products, setProducts] = useState(new ProductModel());
@@ -67,4 +67,7 @@ const BaseComponent:FunctionComponent = ():ReactElement => {
     );
 }
 
-export default BaseComponent;
+export {
+    BaseComponent,
+    productOptions
+};
