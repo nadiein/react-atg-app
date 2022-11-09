@@ -19,7 +19,7 @@ jobs:
       - name: Install Node.js dependencies
         run: npm i
       - name: Run tests
-        run: npm test
+        run: npm run test
 
       - name: Run linters
-        run: npm lint
+        run: npm run lint
