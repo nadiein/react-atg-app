@@ -1,3 +1,7 @@
+// ### Copyright (c) 2022 Igor Nadiein, Software Developer. (inadiein@gmail.com)
+// ### Github https://guthub.com/nadiein
+// ### Typescript config file for react
+
 {
   "compilerOptions": {
     "target": "es5",
@@ -23,5 +27,8 @@
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "src/**/*.test.tsx"
   ]
 }

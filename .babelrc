@@ -1,3 +1,7 @@
+// ### Copyright (c) 2022 Igor Nadiein, Software Developer. (inadiein@gmail.com)
+// ### Github https://guthub.com/nadiein
+// ### Babel config file, set up to work with typescript and react
+
 {
   "presets": [
     ["@babel/preset-env",{
