@@ -1,6 +1,6 @@
-# ATG React test app
+# Playground React test app
 
-####  Server side                           - ATG api
+####  Server side                           - 3rd party api
 ####  Client                                - react, typescript
 ####  Tests                                 - jest
 ####  CI/CD                                 - git and github workflow actions
